@@ -1,0 +1,497 @@
+Starting MSRoc Framework Execution...
+Loading articles from: IRE-dataset/IRENews
+  Processing file: us_newsarticle_August_25
+  Processing file: us_newsarticle_August_22
+  Processing file: us_newsarticle_August_14
+  Processing file: us_newsarticle_August_13
+  Processing file: us_newsarticle_August_12
+  Processing file: us_newsarticle_August_15
+  Processing file: us_newsarticle_August_23
+  Processing file: us_newsarticle_August_24
+  Processing file: us_newsarticle_August_1
+  Processing file: us_newsarticle_August_6
+  Processing file: us_newsarticle_August_8
+  Processing file: us_newsarticle_August_9
+  Processing file: us_newsarticle_August_7
+  Processing file: us_newsarticle_August_30
+  Processing file: us_newsarticle_August_21
+  Processing file: us_newsarticle_August_26
+  Processing file: us_newsarticle_August_19
+  Processing file: us_newsarticle_August_10
+  Processing file: us_newsarticle_August_17
+  Processing file: us_newsarticle_August_28
+  Processing file: us_newsarticle_August_16
+  Processing file: us_newsarticle_August_29
+  Processing file: us_newsarticle_August_11
+  Processing file: us_newsarticle_August_27
+  Processing file: us_newsarticle_August_18
+  Processing file: us_newsarticle_August_20
+  Processing file: us_newsarticle_August_5
+  Processing file: us_newsarticle_August_2
+  Processing file: us_newsarticle_August_3
+  Processing file: us_newsarticle_August_4
+Loaded 792 articles.
+Loading tweets from: IRE-dataset/TweetsIRE/intweetsfile_Aug_01
+  Processed 10000 tweets so far
+  Processed 20000 tweets so far
+  Processed 30000 tweets so far
+  Processed 40000 tweets so far
+  Processed 50000 tweets so far
+  Processed 60000 tweets so far
+  Processed 70000 tweets so far
+  Processed 80000 tweets so far
+  Processed 90000 tweets so far
+  Processed 100000 tweets so far
+  Processed 110000 tweets so far
+  Processed 120000 tweets so far
+  Processed 130000 tweets so far
+  Processed 140000 tweets so far
+  Processed 150000 tweets so far
+  Processed 160000 tweets so far
+  Processed 170000 tweets so far
+  Processed 180000 tweets so far
+  Processed 190000 tweets so far
+  Processed 200000 tweets so far
+  Processed 210000 tweets so far
+  Processed 220000 tweets so far
+  Processed 230000 tweets so far
+  Processed 240000 tweets so far
+  Processed 250000 tweets so far
+  Processed 260000 tweets so far
+  Processed 270000 tweets so far
+  Processed 280000 tweets so far
+  Processed 290000 tweets so far
+  Processed 300000 tweets so far
+  Processed 310000 tweets so far
+  Processed 320000 tweets so far
+  Processed 330000 tweets so far
+  Processed 340000 tweets so far
+  Processed 350000 tweets so far
+  Processed 360000 tweets so far
+  Processed 370000 tweets so far
+  Processed 380000 tweets so far
+  Processed 390000 tweets so far
+  Processed 400000 tweets so far
+  Processed 410000 tweets so far
+  Processed 420000 tweets so far
+  Processed 430000 tweets so far
+  Processed 440000 tweets so far
+  Processed 450000 tweets so far
+  Processed 460000 tweets so far
+  Processed 470000 tweets so far
+  Processed 480000 tweets so far
+  Processed 490000 tweets so far
+  Processed 500000 tweets so far
+  Processed 510000 tweets so far
+  Processed 520000 tweets so far
+  Processed 530000 tweets so far
+  Processed 540000 tweets so far
+  Processed 550000 tweets so far
+  Processed 560000 tweets so far
+  Processed 570000 tweets so far
+  Processed 580000 tweets so far
+  Processed 590000 tweets so far
+  Processed 600000 tweets so far
+  Processed 610000 tweets so far
+  Processed 620000 tweets so far
+  Processed 630000 tweets so far
+  Processed 640000 tweets so far
+  Processed 650000 tweets so far
+  Processed 660000 tweets so far
+  Processed 670000 tweets so far
+  Processed 680000 tweets so far
+  Processed 690000 tweets so far
+  Processed 700000 tweets so far
+  Processed 710000 tweets so far
+  Processed 720000 tweets so far
+  Processed 730000 tweets so far
+  Processed 740000 tweets so far
+  Processed 750000 tweets so far
+  Processed 760000 tweets so far
+  Processed 770000 tweets so far
+  Processed 780000 tweets so far
+  Processed 790000 tweets so far
+  Processed 800000 tweets so far
+  Processed 810000 tweets so far
+  Processed 820000 tweets so far
+  Processed 830000 tweets so far
+  Processed 840000 tweets so far
+  Processed 850000 tweets so far
+  Processed 860000 tweets so far
+  Processed 870000 tweets so far
+  Processed 880000 tweets so far
+  Processed 890000 tweets so far
+  Processed 900000 tweets so far
+  Processed 910000 tweets so far
+  Processed 920000 tweets so far
+  Processed 930000 tweets so far
+  Processed 940000 tweets so far
+  Processed 950000 tweets so far
+  Processed 960000 tweets so far
+  Processed 970000 tweets so far
+  Processed 980000 tweets so far
+  Processed 990000 tweets so far
+  Processed 1000000 tweets so far
+  Processed 1010000 tweets so far
+  Processed 1020000 tweets so far
+  Processed 1030000 tweets so far
+  Processed 1040000 tweets so far
+  Processed 1050000 tweets so far
+  Processed 1060000 tweets so far
+  Processed 1070000 tweets so far
+  Processed 1080000 tweets so far
+  Processed 1090000 tweets so far
+  Processed 1100000 tweets so far
+  Processed 1110000 tweets so far
+  Processed 1120000 tweets so far
+  Processed 1130000 tweets so far
+  Processed 1140000 tweets so far
+  Processed 1150000 tweets so far
+  Processed 1160000 tweets so far
+  Processed 1170000 tweets so far
+  Processed 1180000 tweets so far
+  Processed 1190000 tweets so far
+  Processed 1200000 tweets so far
+  Processed 1210000 tweets so far
+  Processed 1220000 tweets so far
+  Processed 1230000 tweets so far
+  Processed 1240000 tweets so far
+  Processed 1250000 tweets so far
+  Processed 1260000 tweets so far
+  Processed 1270000 tweets so far
+  Processed 1280000 tweets so far
+  Processed 1290000 tweets so far
+  Processed 1300000 tweets so far
+  Processed 1310000 tweets so far
+  Processed 1320000 tweets so far
+  Processed 1330000 tweets so far
+  Processed 1340000 tweets so far
+  Processed 1350000 tweets so far
+  Processed 1360000 tweets so far
+  Processed 1370000 tweets so far
+  Processed 1380000 tweets so far
+  Processed 1390000 tweets so far
+  Processed 1400000 tweets so far
+  Processed 1410000 tweets so far
+  Processed 1420000 tweets so far
+  Processed 1430000 tweets so far
+  Processed 1440000 tweets so far
+  Processed 1450000 tweets so far
+  Processed 1460000 tweets so far
+  Processed 1470000 tweets so far
+  Processed 1480000 tweets so far
+  Processed 1490000 tweets so far
+  Processed 1500000 tweets so far
+  Processed 1510000 tweets so far
+  Processed 1520000 tweets so far
+  Processed 1530000 tweets so far
+  Processed 1540000 tweets so far
+  Processed 1550000 tweets so far
+  Processed 1560000 tweets so far
+  Processed 1570000 tweets so far
+  Processed 1580000 tweets so far
+  Processed 1590000 tweets so far
+  Processed 1600000 tweets so far
+  Processed 1610000 tweets so far
+  Processed 1620000 tweets so far
+  Processed 1630000 tweets so far
+  Processed 1640000 tweets so far
+  Processed 1650000 tweets so far
+  Processed 1660000 tweets so far
+  Processed 1670000 tweets so far
+  Processed 1680000 tweets so far
+  Processed 1690000 tweets so far
+  Processed 1700000 tweets so far
+  Processed 1710000 tweets so far
+  Processed 1720000 tweets so far
+  Processed 1730000 tweets so far
+  Processed 1740000 tweets so far
+  Processed 1750000 tweets so far
+  Processed 1760000 tweets so far
+  Processed 1770000 tweets so far
+  Processed 1780000 tweets so far
+  Processed 1790000 tweets so far
+  Processed 1800000 tweets so far
+  Processed 1810000 tweets so far
+  Processed 1820000 tweets so far
+  Processed 1830000 tweets so far
+  Processed 1840000 tweets so far
+  Processed 1850000 tweets so far
+  Processed 1860000 tweets so far
+  Processed 1870000 tweets so far
+  Processed 1880000 tweets so far
+  Processed 1890000 tweets so far
+  Processed 1900000 tweets so far
+  Processed 1910000 tweets so far
+  Processed 1920000 tweets so far
+  Processed 1930000 tweets so far
+  Processed 1940000 tweets so far
+  Processed 1950000 tweets so far
+  Processed 1960000 tweets so far
+  Processed 1970000 tweets so far
+  Processed 1980000 tweets so far
+  Processed 1990000 tweets so far
+  Processed 2000000 tweets so far
+  Processed 2010000 tweets so far
+  Processed 2020000 tweets so far
+  Processed 2030000 tweets so far
+  Processed 2040000 tweets so far
+  Processed 2050000 tweets so far
+  Processed 2060000 tweets so far
+  Processed 2070000 tweets so far
+  Processed 2080000 tweets so far
+  Processed 2090000 tweets so far
+  Processed 2100000 tweets so far
+  Processed 2110000 tweets so far
+  Processed 2120000 tweets so far
+  Processed 2130000 tweets so far
+  Processed 2140000 tweets so far
+  Processed 2150000 tweets so far
+  Processed 2160000 tweets so far
+  Processed 2170000 tweets so far
+  Processed 2180000 tweets so far
+  Processed 2190000 tweets so far
+  Processed 2200000 tweets so far
+  Processed 2210000 tweets so far
+  Processed 2220000 tweets so far
+  Processed 2230000 tweets so far
+  Processed 2240000 tweets so far
+  Processed 2250000 tweets so far
+  Processed 2260000 tweets so far
+  Processed 2270000 tweets so far
+  Processed 2280000 tweets so far
+  Processed 2290000 tweets so far
+  Processed 2300000 tweets so far
+  Processed 2310000 tweets so far
+  Processed 2320000 tweets so far
+  Processed 2330000 tweets so far
+  Processed 2340000 tweets so far
+  Processed 2350000 tweets so far
+  Processed 2360000 tweets so far
+  Processed 2370000 tweets so far
+  Processed 2380000 tweets so far
+  Processed 2390000 tweets so far
+  Processed 2400000 tweets so far
+  Processed 2410000 tweets so far
+  Processed 2420000 tweets so far
+  Processed 2430000 tweets so far
+  Processed 2440000 tweets so far
+  Processed 2450000 tweets so far
+  Processed 2460000 tweets so far
+  Processed 2470000 tweets so far
+  Processed 2480000 tweets so far
+  Processed 2490000 tweets so far
+  Processed 2500000 tweets so far
+  Processed 2510000 tweets so far
+  Processed 2520000 tweets so far
+  Processed 2530000 tweets so far
+  Processed 2540000 tweets so far
+  Processed 2550000 tweets so far
+  Processed 2560000 tweets so far
+  Processed 2570000 tweets so far
+  Processed 2580000 tweets so far
+  Processed 2590000 tweets so far
+  Processed 2600000 tweets so far
+  Processed 2610000 tweets so far
+  Processed 2620000 tweets so far
+  Processed 2630000 tweets so far
+  Processed 2640000 tweets so far
+  Processed 2650000 tweets so far
+  Processed 2660000 tweets so far
+  Processed 2670000 tweets so far
+  Processed 2680000 tweets so far
+  Processed 2690000 tweets so far
+  Processed 2700000 tweets so far
+  Processed 2710000 tweets so far
+  Processed 2720000 tweets so far
+  Processed 2730000 tweets so far
+  Processed 2740000 tweets so far
+  Processed 2750000 tweets so far
+  Processed 2760000 tweets so far
+  Processed 2770000 tweets so far
+  Processed 2780000 tweets so far
+  Processed 2790000 tweets so far
+  Processed 2800000 tweets so far
+  Processed 2810000 tweets so far
+  Processed 2820000 tweets so far
+  Processed 2830000 tweets so far
+  Processed 2840000 tweets so far
+  Processed 2850000 tweets so far
+  Processed 2860000 tweets so far
+  Processed 2870000 tweets so far
+  Processed 2880000 tweets so far
+  Processed 2890000 tweets so far
+  Processed 2900000 tweets so far
+  Processed 2910000 tweets so far
+  Processed 2920000 tweets so far
+  Processed 2930000 tweets so far
+  Processed 2940000 tweets so far
+  Processed 2950000 tweets so far
+  Processed 2960000 tweets so far
+  Processed 2970000 tweets so far
+  Processed 2980000 tweets so far
+  Processed 2990000 tweets so far
+  Processed 3000000 tweets so far
+  Processed 3010000 tweets so far
+  Processed 3020000 tweets so far
+  Processed 3030000 tweets so far
+  Processed 3040000 tweets so far
+  Processed 3050000 tweets so far
+  Processed 3060000 tweets so far
+  Processed 3070000 tweets so far
+  Processed 3080000 tweets so far
+  Processed 3090000 tweets so far
+  Processed 3100000 tweets so far
+  Processed 3110000 tweets so far
+  Processed 3120000 tweets so far
+  Processed 3130000 tweets so far
+  Processed 3140000 tweets so far
+  Processed 3150000 tweets so far
+  Processed 3160000 tweets so far
+  Processed 3170000 tweets so far
+  Processed 3180000 tweets so far
+  Processed 3190000 tweets so far
+  Processed 3200000 tweets so far
+  Processed 3210000 tweets so far
+  Processed 3220000 tweets so far
+  Processed 3230000 tweets so far
+  Processed 3240000 tweets so far
+  Processed 3250000 tweets so far
+  Processed 3260000 tweets so far
+  Processed 3270000 tweets so far
+  Processed 3280000 tweets so far
+  Processed 3290000 tweets so far
+  Processed 3300000 tweets so far
+  Processed 3310000 tweets so far
+  Processed 3320000 tweets so far
+  Processed 3330000 tweets so far
+  Processed 3340000 tweets so far
+  Processed 3350000 tweets so far
+  Processed 3360000 tweets so far
+  Processed 3370000 tweets so far
+  Processed 3380000 tweets so far
+  Processed 3390000 tweets so far
+  Processed 3400000 tweets so far
+  Processed 3410000 tweets so far
+  Processed 3420000 tweets so far
+  Processed 3430000 tweets so far
+  Processed 3440000 tweets so far
+  Processed 3450000 tweets so far
+  Processed 3460000 tweets so far
+  Processed 3470000 tweets so far
+  Processed 3480000 tweets so far
+  Processed 3490000 tweets so far
+  Processed 3500000 tweets so far
+  Processed 3510000 tweets so far
+  Processed 3520000 tweets so far
+  Processed 3530000 tweets so far
+  Processed 3540000 tweets so far
+  Processed 3550000 tweets so far
+  Processed 3560000 tweets so far
+  Processed 3570000 tweets so far
+  Processed 3580000 tweets so far
+  Processed 3590000 tweets so far
+  Processed 3600000 tweets so far
+  Processed 3610000 tweets so far
+  Processed 3620000 tweets so far
+  Processed 3630000 tweets so far
+  Processed 3640000 tweets so far
+  Processed 3650000 tweets so far
+  Processed 3660000 tweets so far
+  Processed 3670000 tweets so far
+  Processed 3680000 tweets so far
+  Processed 3690000 tweets so far
+  Processed 3700000 tweets so far
+  Processed 3710000 tweets so far
+  Processed 3720000 tweets so far
+  Processed 3730000 tweets so far
+  Processed 3740000 tweets so far
+  Processed 3750000 tweets so far
+  Processed 3760000 tweets so far
+  Processed 3770000 tweets so far
+  Processed 3780000 tweets so far
+  Processed 3790000 tweets so far
+  Processed 3800000 tweets so far
+Loaded 3809428 tweets.
+
+Target Article ID: us_newsarticle_August_25_0
+Target Article Title: Clinton emails reveal plans to depict Ryan as anti-Trump
+
+Preprocessing tweet corpus for BM25...
+Preprocessed 3809428 tweets for BM25.
+
+--- Phase 1: Initial Retrieval (BM25) ---
+Preprocessing target article for BM25 query...
+Article query tokens (sample): ['august']...
+Initializing BM25 index...
+BM25 index initialized.
+Calculating initial BM25 scores for all tweets...
+Calculated 3809428 scores.
+Selecting top 50 tweets based on BM25 scores...
+Selected 50 candidates.
+Top 5 candidate IDs and scores: [('759911340320305158', np.float64(10.039487538947645)), ('759914788054970372', np.float64(10.039487538947645)), ('759914939045654529', np.float64(10.039487538947645)), ('759914964219858946', np.float64(10.039487538947645)), ('760151913039921152', np.float64(10.039487538947645))]
+
+--- Phase 2: Semantic Analysis (Sentence-BERT) ---
+Loading Sentence-BERT model ('all-MiniLM-L6-v2')...
+Sentence-BERT model loaded.
+Preparing texts for Sentence-BERT encoding...
+Encoding target article...
+Article encoded.
+Encoding 50 top N tweets...
+Top N tweets encoded.
+Calculating cosine similarities...
+Calculated 50 semantic scores.
+Top 5 semantic scores: [('759941371545419778', np.float32(0.70778215)), ('759941396707115008', np.float32(0.70778215)), ('759945188383027200', np.float32(0.70778215)), ('760139560785510401', np.float32(0.67224157)), ('759914939045654529', np.float32(0.6586585))]
+
+--- Phase 3: Term Weighting and Integration ---
+Extracting terms from top N tweets (using BM25 preprocessing)...
+Found 3 unique terms in top 50 tweets.
+Calculating integrated term weights (alpha=0.5)...
+Calculated weights for 3 terms.
+Top 5 terms by integrated weight: [('august', np.float64(5.282244784502286)), ('augustaugust', np.float64(5.144112416797918)), ('rt', np.float64(5.124085160840444))]
+
+--- Phase 4: Query Expansion ---
+Selected 3 expansion terms: ['august', 'augustaugust', 'rt']
+Original query length: 1, Expanded query length: 4
+Expanded query tokens (sample): ['august', 'august', 'augustaugust', 'rt']...
+
+--- Phase 5: Second Retrieval (BM25 with Expanded Query) ---
+Calculating final BM25 scores using the expanded query...
+Calculated 3809428 final scores.
+Ranked all tweets based on final scores.
+
+--- Phase 6: Final Output ---
+
+Final Ranked Tweets for Article ID: us_newsarticle_August_25_0
+--------------------------------------------------
+Rank 1: Tweet ID: 760220947072909312, Score: 29.5811
+Rank 2: Tweet ID: 760221043524939777, Score: 29.5811
+Rank 3: Tweet ID: 759911340320305158, Score: 20.0790
+Rank 4: Tweet ID: 759914788054970372, Score: 20.0790
+Rank 5: Tweet ID: 759914939045654529, Score: 20.0790
+Rank 6: Tweet ID: 759914964219858946, Score: 20.0790
+Rank 7: Tweet ID: 760151913039921152, Score: 20.0790
+Rank 8: Tweet ID: 760178882385412097, Score: 20.0790
+Rank 9: Tweet ID: 760179436029345793, Score: 20.0790
+Rank 10: Tweet ID: 760183584225423361, Score: 20.0790
+Rank 11: Tweet ID: 760187451373711362, Score: 20.0790
+Rank 12: Tweet ID: 760228828186894337, Score: 20.0790
+Rank 13: Tweet ID: 760232959559475201, Score: 20.0790
+Rank 14: Tweet ID: 760236856055390209, Score: 20.0790
+Rank 15: Tweet ID: 760240970675867648, Score: 20.0790
+Rank 16: Tweet ID: 760241058773082112, Score: 20.0790
+Rank 17: Tweet ID: 760244066076459008, Score: 20.0790
+Rank 18: Tweet ID: 760244942698676224, Score: 20.0790
+Rank 19: Tweet ID: 759931229718319104, Score: 20.0790
+Rank 20: Tweet ID: 759934589343297536, Score: 20.0790
+
+--- MSRoc Framework Execution Complete ---
+This PRON nsubj
+is AUX ROOT
+a DET det
+sample NOUN compound
+text NOUN attr
+to PART aux
+process VERB relcl
+with ADP prep
+spaCy NUM pobj
