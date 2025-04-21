@@ -1,0 +1,253 @@
+Target Article: Zika outbreak prompts travel warning for parts of Miami
+
+Top N Tweets from BM25:
+
+Rank 1 (Score: 66.3515):
+Tweet ID: 760245269841768448
+Text: Zika Prompts Travel Warning for Area in Miami https://t.co/gzNuqxxQXc
+--------------------------------------------------------------------------------
+
+Rank 2 (Score: 62.2495):
+Tweet ID: 760236134660276224
+Text: The CDC has issued a travel warning for Miami over Zika outbreak https://t.co/FUjtzX8cfP
+--------------------------------------------------------------------------------
+
+Rank 3 (Score: 60.4363):
+Tweet ID: 760225061701685248
+Text: CDC issues historic travel warning over Miami Zika outbreak
+--------------------------------------------------------------------------------
+
+Rank 4 (Score: 60.4363):
+Tweet ID: 760262122538278912
+Text: CDC issues historic travel warning over Miami Zika outbreak https://t.co/eMQF22Qhgz
+--------------------------------------------------------------------------------
+
+Rank 5 (Score: 57.1093):
+Tweet ID: 760256539953246208
+Text: https://t.co/3hq955qjS8 (LV.6) CDC issues historic travel warning over Miami Zika outbreak - https://t.co/mK6UXhmHuB https://t.co/mlfRacICTz
+--------------------------------------------------------------------------------
+
+Rank 6 (Score: 57.1093):
+Tweet ID: 760257898882723841
+Text: New post: CDC Issues Historic Travel Warning Over Miami Zika Outbreak https://t.co/XaudAEZib3
+--------------------------------------------------------------------------------
+
+Rank 7 (Score: 57.1093):
+Tweet ID: 760263842203045888
+Text: CDC issues historic travel warning over Miami Zika outbreak https://t.co/xJhWnQlNLq via CNN
+--------------------------------------------------------------------------------
+
+Rank 8 (Score: 49.9937):
+Tweet ID: 760225124612046849
+Text: CDC issues historic travel warning on Zika in Miami: The CDC issued an unprecedented travel warning on Zika M... https://t.co/juuRr2ivaU
+--------------------------------------------------------------------------------
+
+Rank 9 (Score: 49.9926):
+Tweet ID: 760170992928854016
+Text: CDC Issues Travel Warning for Florida After Zika Outbreak https://t.co/lUA6LDbMba
+--------------------------------------------------------------------------------
+
+Rank 10 (Score: 48.5364):
+Tweet ID: 760209647638765568
+Text: Florida issues domestic travel warning amid Zika outbreak https://t.co/ubs1814hjP https://t.co/kR0OXshSXq
+--------------------------------------------------------------------------------
+
+Rank 11 (Score: 47.0027):
+Tweet ID: 760206728403128324
+Text: Zika travel warning issued for Miami neighbourhood: AFP  https://t.co/m5RjekE2eP
+--------------------------------------------------------------------------------
+
+Rank 12 (Score: 47.0027):
+Tweet ID: 760229151135510528
+Text: CDC issues historic travel warning over Zika in Miami https://t.co/QiDZkZXhi7
+--------------------------------------------------------------------------------
+
+Rank 13 (Score: 46.8751):
+Tweet ID: 760192312567881728
+Text: RT @nycjim: CDC warns pregnant women against traveling to parts of Miami because of Zika outbreak. https://t.co/masFdZlTHw https://t.co/n8f...
+--------------------------------------------------------------------------------
+
+Rank 14 (Score: 46.8751):
+Tweet ID: 760201246426796032
+Text: RT @nycjim: CDC warns pregnant women against traveling to parts of Miami because of Zika outbreak. https://t.co/masFdZlTHw https://t.co/n8f...
+--------------------------------------------------------------------------------
+
+Rank 15 (Score: 45.8646):
+Tweet ID: 760213133084418048
+Text: RT @ThisWeekABC: CDC issues travel warning for Florida after Zika Virus outbreak https://t.co/jWuQa7FyXc https://t.co/TUQpToBe8V
+--------------------------------------------------------------------------------
+
+Rank 16 (Score: 44.3420):
+Tweet ID: 760178462988509185
+Text: RT @FRANCE24: Zika travel warning issued for Miami neighborhood: US https://t.co/lC3F3qLBby https://t.co/W4OWD7QvJm
+--------------------------------------------------------------------------------
+
+Rank 17 (Score: 43.1215):
+Tweet ID: 760200545990606848
+Text: CDC: Florida Zika cases prompt Miami travel warning for pregnant women.
+--------------------------------------------------------------------------------
+
+Rank 18 (Score: 43.1215):
+Tweet ID: 760234775701585920
+Text: #CDC issues historic travel warning over #Zika in #Miami https://t.co/vvPEwbZeDd https://t.co/ihJX3ESofz
+--------------------------------------------------------------------------------
+
+Rank 19 (Score: 42.4070):
+Tweet ID: 760169466197979136
+Text: New Florida Zika cases prompt Miami travel warning: Florida confirmed Monday 10 more homegrown cases of Zika ... https://t.co/7eyIjHfXKm
+--------------------------------------------------------------------------------
+
+Rank 20 (Score: 41.9664):
+Tweet ID: 760163472516739072
+Text: RT @pzf: BREAKING NEWS: Zika travel warning issued for Miami Dade Florida.
+--------------------------------------------------------------------------------
+
+Rank 21 (Score: 41.9664):
+Tweet ID: 760169499727245312
+Text: New Florida Zika cases prompt Miami travel warning - USA TODAY https://t.co/A3F6F7zIXE
+--------------------------------------------------------------------------------
+
+Rank 22 (Score: 41.9664):
+Tweet ID: 760177179518992385
+Text: New Florida Zika cases prompt Miami travel warning - USA TODAY https://t.co/ZeBypXrz24
+--------------------------------------------------------------------------------
+
+Rank 23 (Score: 40.8716):
+Tweet ID: 760246775592521728
+Text: CDC issues historic travel warning over Zika in Miami: The Centers for Disease Control and Prevention issued an... https://t.co/9e8YANaSSp
+--------------------------------------------------------------------------------
+
+Rank 24 (Score: 40.8716):
+Tweet ID: 760251796178759680
+Text: SeanYoungPhD: RT cnnhealth: CDC issues historic travel warning over Zika for a small Miami community: ... https://t.co/bnoFD5qNbx
+--------------------------------------------------------------------------------
+
+Rank 25 (Score: 40.8716):
+Tweet ID: 760251859076542464
+Text: SeanYoungPhD: RT cnnhealth: CDC issues historic travel warning over Zika for a small Miami community: ... https://t.co/pGHR656j3u
+--------------------------------------------------------------------------------
+
+Rank 26 (Score: 39.8325):
+Tweet ID: 760239800469250048
+Text: New Florida Zika cases prompt Miami travel warning \u2013 USA TODAY https://t.co/3kkuhf8gHs Top Stories
+--------------------------------------------------------------------------------
+
+Rank 27 (Score: 39.0414):
+Tweet ID: 760167884937043968
+Text: Zika: Mums-to-be get Miami warning https://t.co/OvLzstZ2nh
+--------------------------------------------------------------------------------
+
+Rank 28 (Score: 39.0414):
+Tweet ID: 760168564427022337
+Text: Zika: Mums-to-be get Miami warning https://t.co/gWxzXpbmgs
+--------------------------------------------------------------------------------
+
+Rank 29 (Score: 38.8448):
+Tweet ID: 760206648686288897
+Text: NYC updates #Zika travel warning to include Miami neighborhood where there were ten additional locally transmitted cases
+--------------------------------------------------------------------------------
+
+Rank 30 (Score: 38.8448):
+Tweet ID: 760243730523750403
+Text: RT @ABCWorldNews: CDC issues travel advisory warning pregnant women from visiting northern Miami due to Zika. https://t.co/W2rQKlWkVa https...
+--------------------------------------------------------------------------------
+
+Rank 31 (Score: 37.9050):
+Tweet ID: 760149589374697472
+Text: New Florida Zika cases prompt Miami travel warning, specifically north of downtown - Wynwood, Midtown https://t.co/Mm3JthN73y by @LizSzabo
+--------------------------------------------------------------------------------
+
+Rank 32 (Score: 37.9050):
+Tweet ID: 760245454378504193
+Text: RT @politico: CDC issues #Zika travel warning for Miami; Florida officials identify 10 new cases https://t.co/qHfxPU4v3O | AP https://t.co/...
+--------------------------------------------------------------------------------
+
+Rank 33 (Score: 37.1055):
+Tweet ID: 760176588130516992
+Text: Daily Kos Zika hits Florida, exploding in Puerto Rico Daily Kos A Zika outbreak in Miami has... https://t.co/KrJ4QwGVIv
+--------------------------------------------------------------------------------
+
+Rank 34 (Score: 36.3373):
+Tweet ID: 760175824742080512
+Text: business: Pregnant women should avoid Miami Zika outbreak area, CDC warns https://t.co/8GY5knCHe5 https://t.co/g7h8f9tOlM
+--------------------------------------------------------------------------------
+
+Rank 35 (Score: 36.3373):
+Tweet ID: 760225917318799361
+Text: There's is Zika outbreak in Miami. More reason I don't need to go out for a while \ud83d\ude4c\ud83c\udffb
+--------------------------------------------------------------------------------
+
+Rank 36 (Score: 35.4683):
+Tweet ID: 760175778608721920
+Text: Zika: Mums-to-be get Miami warning: Pregnant women are warned to avoid Zika-affected neighbourhoods of Miami,... https://t.co/5AuEcJ9UAh
+--------------------------------------------------------------------------------
+
+Rank 37 (Score: 35.4683):
+Tweet ID: 760175862515806208
+Text: Zika: Mums-to-be get Miami warning: Pregnant women are warned to avoid Zika-affected neighbourhoods of Miami,... https://t.co/12FfpnOokA
+--------------------------------------------------------------------------------
+
+Rank 38 (Score: 34.8985):
+Tweet ID: 760194678142697473
+Text: CDC Issues Travel Warning For Zika-Stricken Part of Miami https://t.co/7aFKjOhXvr
+--------------------------------------------------------------------------------
+
+Rank 39 (Score: 34.7459):
+Tweet ID: 760231990691962880
+Text: CDC issues historic travel warning on Zika in\u00a0Miami https://t.co/I1getfS8hL https://t.co/x5rP8OU3dN
+--------------------------------------------------------------------------------
+
+Rank 40 (Score: 34.6214):
+Tweet ID: 760171198437216256
+Text: #News Zika: Mums-to-be get Miami warning https://t.co/qCnxRZhj1o via @BBC
+--------------------------------------------------------------------------------
+
+Rank 41 (Score: 33.6553):
+Tweet ID: 760167155115655168
+Text: RT @SkyNews: Zika: Health Experts Warn On Travel In Miami https://t.co/Ej1hVDwLSx
+--------------------------------------------------------------------------------
+
+Rank 42 (Score: 33.6553):
+Tweet ID: 760175787010101253
+Text: RT @SkyNews: Zika: Health Experts Warn On Travel In Miami https://t.co/Ej1hVDwLSx
+--------------------------------------------------------------------------------
+
+Rank 43 (Score: 33.4464):
+Tweet ID: 760169231321272320
+Text: BREAKING: Pregnant women urged to avoid travel to parts of Miami affected by Zika https://t.co/LIEx8019DS
+--------------------------------------------------------------------------------
+
+Rank 44 (Score: 33.2620):
+Tweet ID: 760167763306569729
+Text: RT @NightShiftMD: Zika update: pregnant women should avoid travelling to Zika-stricken parts of Miami https://t.co/nwqvNOVRKK
+--------------------------------------------------------------------------------
+
+Rank 45 (Score: 33.2205):
+Tweet ID: 760224797460541441
+Text: Zika: Mums-to-be get Miami warning: Pregnant women are warned to avoid a Zika-affected neighbourhood of Miami, as 10 new cases are id...
+--------------------------------------------------------------------------------
+
+Rank 46 (Score: 32.9462):
+Tweet ID: 760109365999337472
+Text: SOUTH KOREA MERS OUTBREAK - Hong Kong Issues Warning Against S Korea Travel - https://t.co/JsmIdtA2Yb https://t.co/JI4zKxBL20
+--------------------------------------------------------------------------------
+
+Rank 47 (Score: 32.7790):
+Tweet ID: 760170208581615617
+Text: KTVB: Florida confirms 10 more homegrown cases of Zika, travel warning issued https://t.co/vpL46ejqEF
+--------------------------------------------------------------------------------
+
+Rank 48 (Score: 32.7666):
+Tweet ID: 760171135501758464
+Text: Zika: Mums-to-be get Miami warning https://t.co/S5Dt22tube #BBCNews #BBC #News
+--------------------------------------------------------------------------------
+
+Rank 49 (Score: 31.9117):
+Tweet ID: 760171328464793600
+Text: Moms-to-be to get new Miami Zika warning: Pregnant women are warned to avoid Zika-affected neighbourhoods of ... https://t.co/hzCVt9HhUq
+--------------------------------------------------------------------------------
+
+Rank 50 (Score: 31.9117):
+Tweet ID: 760171391375159296
+Text: Moms-to-be to get new Miami Zika warning: Pregnant women are warned to avoid Zika-affected neighbourhoods of ... https://t.co/hOHyn85SNR
+--------------------------------------------------------------------------------

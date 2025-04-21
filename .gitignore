@@ -1,0 +1,6 @@
+venv/
+.venv/
+IRE-dataset/
+.DS_Store
+
+

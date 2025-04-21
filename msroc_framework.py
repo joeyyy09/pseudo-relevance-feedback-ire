@@ -32,23 +32,47 @@ stop_words = set(stopwords.words('english'))
 
 def preprocess_text_bm25(text):
     """
-    Preprocesses text for BM25: lowercase, tokenize, remove punctuation,
-    remove stopwords, remove URLs/mentions.
+    Preprocesses text for BM25: focuses on main content, preserves important terms,
+    removes dates and noise, and tokenizes meaningfully.
     """
     if not isinstance(text, str):
         return []
-    # Lowercase
+    
+    # Convert to lowercase
     text = text.lower()
+    
+    # Remove dates and times (common in news articles)
+    text = re.sub(r'\b\d{1,2}:\d{2}(?:am|pm)?\b', '', text)  # times
+    text = re.sub(r'\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]* \d{1,2},? \d{4}\b', '', text)  # dates
+    text = re.sub(r'\b\d{1,2}/\d{1,2}/\d{2,4}\b', '', text)  # dates with slashes
+    
     # Remove URLs
     text = re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)
-    # Remove user @ mentions
-    text = re.sub(r'\@\w+', '', text)
-    # Remove punctuation
-    text = text.translate(str.maketrans('', '', string.punctuation))
+    
+    # Remove common news article noise
+    text = re.sub(r'\(reuters\)|\(ap\)|\(cnn\)|\(bbc\)', '', text)
+    text = re.sub(r'by [a-z]+(?: [a-z]+)*', '', text)  # bylines
+    
+    # Remove punctuation except for hyphens in compound words
+    text = re.sub(r'[^\w\s#-]', ' ', text)
+    
     # Tokenize
     tokens = word_tokenize(text)
-    # Remove stopwords and non-alphabetic tokens
-    processed_tokens = [word for word in tokens if word.isalpha() and word not in stop_words]
+    
+    # Custom stopwords for news articles
+    news_stopwords = set(stop_words)
+    news_stopwords.update(['said', 'says', 'according', 'reported', 'reports', 'told'])
+    
+    # Remove stopwords but keep important terms
+    processed_tokens = []
+    for word in tokens:
+        if word.strip() and word not in news_stopwords:
+            # Keep numbers if they're part of important context (like "zika virus")
+            if word.isdigit() and len(word) > 4:  # Likely a year or significant number
+                processed_tokens.append(word)
+            elif not word.isdigit():  # Keep non-number words
+                processed_tokens.append(word)
+    
     return processed_tokens
 
 def preprocess_text_sbert(text):
@@ -152,6 +176,11 @@ def load_tweets(filepath, chunksize=10000):
                         tweet_id = parts[1]
                         text = parts[2]
                         
+                        # Clean up the text
+                        text = text.replace('\\/', '/')  # Fix URL slashes
+                        text = text.replace('\\"', '"')  # Fix quotes
+                        text = text.replace('\\u2026', '...')  # Fix ellipsis
+                        
                         tweet = {
                             'tweet_id': tweet_id,
                             'text': text,
@@ -197,6 +226,12 @@ if __name__ == "__main__":
 
     # --- Load Data ---
     articles_data = load_articles(NEWS_DIR)
+    print("\nLoaded articles:")
+    for article_id, article_info in articles_data.items():
+        print(f"ID: {article_id}")
+        print(f"Title: {article_info.get('title', 'N/A')}")
+        print("---")
+
     # tweets_data is a list of dicts: [{'tweet_id': ..., 'text': ..., 'timestamp': ...}, ...]
     tweets_data = load_tweets(TWEET_FILE)
 
@@ -204,12 +239,32 @@ if __name__ == "__main__":
         print("Error: No articles or tweets loaded. Exiting.")
         exit()
 
-    # --- Select Target Article (Example: first loaded article) ---
-    target_article_id = list(articles_data.keys())[0]
+    # --- Select Target Article (Zika Virus Article) ---
+    # Find the Zika article by searching through titles
+    zika_article_id = None
+    for article_id, article_info in articles_data.items():
+        if "Zika" in article_info.get('title', ''):
+            zika_article_id = article_id
+            break
+            
+    if not zika_article_id:
+        print("Error: Could not find Zika virus article. Exiting.")
+        exit()
+        
+    target_article_id = zika_article_id
     target_article_info = articles_data[target_article_id]
-    target_article_text = target_article_info['text']
-    print(f"\nTarget Article ID: {target_article_id}")
-    print(f"Target Article Title: {target_article_info.get('title', 'N/A')}")
+    # Use the title as the content for querying
+    target_article_text = target_article_info['title']
+    print(f"\nSelected Target Article:")
+    print(f"ID: {target_article_id}")
+    print(f"Title: {target_article_info.get('title', 'N/A')}")
+    print(f"Content being used for query: {target_article_text}")
+
+    # After loading the target article, let's print the actual content being used
+    print("\nArticle content being used for query:")
+    print(target_article_text[:500])  # Show first 500 chars
+    print("\nPreprocessed tokens:")
+    print(preprocess_text_bm25(target_article_text)[:50])  # Show first 50 tokens
 
     # --- Preprocess Tweet Corpus for BM25 (Phase 0, Step 4) ---
     print("\nPreprocessing tweet corpus for BM25...")
@@ -226,11 +281,9 @@ if __name__ == "__main__":
     article_query_tokens = preprocess_text_bm25(target_article_text)
     if not article_query_tokens:
          print("Warning: Target article produced no tokens after preprocessing for BM25.")
-         # Handle case where article is empty or only stopwords/punctuation
-         # Maybe use title? For now, we'll proceed but BM25 might perform poorly.
-         # article_query_tokens = preprocess_text_bm25(target_article_info.get('title', ''))
+         exit()
 
-    print(f"Article query tokens (sample): {article_query_tokens[:20]}...")
+    print(f"Article query tokens (sample): {article_query_tokens[:200]}...")
 
     # Index Tweets (Step 7)
     print("Initializing BM25 index...")
@@ -242,191 +295,115 @@ if __name__ == "__main__":
     initial_bm25_scores = bm25.get_scores(article_query_tokens)
     print(f"Calculated {len(initial_bm25_scores)} scores.")
 
-    # Combine scores with tweet IDs
-    # Ensure scores and IDs align correctly
-    if len(initial_bm25_scores) != len(tweet_ids_ordered):
-         print("Error: Mismatch between number of BM25 scores and number of tweets!")
-         exit()
-         
-    scored_tweets = list(zip(tweet_ids_ordered, initial_bm25_scores))
+    # Combine scores with tweet IDs and texts
+    scored_tweets = list(zip(tweet_ids_ordered, initial_bm25_scores, [tweet['text'] for tweet in tweets_data]))
 
     # Select Top N Tweets (Step 9)
     print(f"Selecting top {N_INITIAL_CANDIDATES} tweets based on BM25 scores...")
-    # Sort by score descending
     scored_tweets.sort(key=lambda item: item[1], reverse=True)
-    
-    # Get the top N tweet IDs and their scores
     top_n_candidates = scored_tweets[:N_INITIAL_CANDIDATES]
-    top_n_tweet_ids = [item[0] for item in top_n_candidates]
-    initial_score_map = dict(top_n_candidates) # Store scores for later use {tweet_id: score}
 
-    print(f"Selected {len(top_n_tweet_ids)} candidates.")
-    print(f"Top 5 candidate IDs and scores: {top_n_candidates[:5]}")
+    # Save initial results
+    print("\nSaving initial BM25 results...")
+    with open('initial_bm25_results.txt', 'w', encoding='utf-8') as f:
+        f.write(f"Target Article: {target_article_info['title']}\n\n")
+        f.write("Top N Tweets from BM25:\n")
+        for i, (tweet_id, score, text) in enumerate(top_n_candidates, 1):
+            f.write(f"\nRank {i} (Score: {score:.4f}):\n")
+            f.write(f"Tweet ID: {tweet_id}\n")
+            f.write(f"Text: {text}\n")
+            f.write("-" * 80 + "\n")
 
     # --- Phase 2: Semantic Analysis (Sentence-BERT) ---
     print("\n--- Phase 2: Semantic Analysis (Sentence-BERT) ---")
 
     # Load Sentence-BERT Model (Step 10)
-    print("Loading Sentence-BERT model ('all-MiniLM-L6-v2')...")
+    print("Loading Sentence-BERT model...")
     sbert_model = SentenceTransformer('all-MiniLM-L6-v2')
-    print("Sentence-BERT model loaded.")
+    print("Model loaded.")
 
     # Get Raw Texts for Top N Tweets (Step 11)
-    # Create a lookup for faster access to tweet text by ID
-    tweet_lookup = {tweet['tweet_id']: tweet['text'] for tweet in tweets_data}
-    
-    # Prepare texts for SBERT encoding (minimal preprocessing)
-    print("Preparing texts for Sentence-BERT encoding...")
+    top_n_tweet_texts = [text for _, _, text in top_n_candidates]
     article_text_sbert = preprocess_text_sbert(target_article_text)
-    top_n_tweet_texts_sbert = [preprocess_text_sbert(tweet_lookup.get(tid, "")) for tid in top_n_tweet_ids]
-    
-    # Filter out any potential empty strings resulting from lookup failures or preprocessing
-    valid_indices = [i for i, txt in enumerate(top_n_tweet_texts_sbert) if txt]
-    valid_top_n_tweet_ids = [top_n_tweet_ids[i] for i in valid_indices]
-    valid_top_n_tweet_texts_sbert = [top_n_tweet_texts_sbert[i] for i in valid_indices]
+    top_n_tweet_texts_sbert = [preprocess_text_sbert(text) for text in top_n_tweet_texts]
 
-    if not article_text_sbert:
-        print("Warning: Target article text is empty after SBERT preprocessing.")
-        # Handle appropriately, maybe skip semantic analysis or use title
-        article_embedding = np.zeros(sbert_model.get_sentence_embedding_dimension()) # Zero vector
-    else:
-        # Encode Texts (Step 12)
-        print(f"Encoding target article...")
-        article_embedding = sbert_model.encode(article_text_sbert, convert_to_tensor=False) # Get numpy array
-        print("Article encoded.")
+    # Encode Texts (Step 12)
+    print("Encoding texts...")
+    article_embedding = sbert_model.encode(article_text_sbert, convert_to_tensor=False)
+    tweet_embeddings = sbert_model.encode(top_n_tweet_texts_sbert, convert_to_tensor=False)
 
-    if not valid_top_n_tweet_texts_sbert:
-         print("Warning: No valid tweet texts found for semantic analysis after preprocessing.")
-         top_n_tweet_embeddings = np.array([]) # Empty array
-         semantic_scores = {}
-    else:
-        print(f"Encoding {len(valid_top_n_tweet_texts_sbert)} top N tweets...")
-        top_n_tweet_embeddings = sbert_model.encode(valid_top_n_tweet_texts_sbert, convert_to_tensor=False)
-        print("Top N tweets encoded.")
-
-        # Calculate Semantic Similarities (Step 13)
-        print("Calculating cosine similarities...")
-        # Reshape article_embedding for pairwise calculation (1 sample vs N samples)
-        similarities = cosine_similarity(article_embedding.reshape(1, -1), top_n_tweet_embeddings)[0] # Get the first row
-        
-        # Store similarities, mapping back to the original tweet IDs
-        semantic_scores = {tid: sim for tid, sim in zip(valid_top_n_tweet_ids, similarities)}
-        print(f"Calculated {len(semantic_scores)} semantic scores.")
-        # Example: Print top 5 semantic scores
-        sorted_semantic = sorted(semantic_scores.items(), key=lambda item: item[1], reverse=True)
-        print(f"Top 5 semantic scores: {sorted_semantic[:5]}")
-        
-    # Ensure semantic_scores covers all top_n_tweet_ids, potentially with 0 for those missing/empty
-    full_semantic_scores = {tid: semantic_scores.get(tid, 0.0) for tid in top_n_tweet_ids}
-
+    # Calculate Semantic Similarities (Step 13)
+    print("Calculating semantic similarities...")
+    similarities = cosine_similarity(article_embedding.reshape(1, -1), tweet_embeddings)[0]
+    semantic_scores = {tweet_id: sim for (tweet_id, _, _), sim in zip(top_n_candidates, similarities)}
 
     # --- Phase 3: Term Weighting and Integration ---
     print("\n--- Phase 3: Term Weighting and Integration ---")
 
     # Extract Terms from Top N Tweets (Step 14)
-    print("Extracting terms from top N tweets (using BM25 preprocessing)...")
-    top_n_processed_tweets = {} # {tweet_id: [token1, token2,...]}
+    print("Extracting terms from top N tweets...")
+    top_n_processed_tweets = {}
     unique_terms = set()
-    for tid in top_n_tweet_ids:
-        original_text = tweet_lookup.get(tid)
-        if original_text:
-            processed = preprocess_text_bm25(original_text)
-            top_n_processed_tweets[tid] = processed
-            unique_terms.update(processed)
-        else:
-            top_n_processed_tweets[tid] = [] # Store empty list if text was missing
+    for tweet_id, _, text in top_n_candidates:
+        processed = preprocess_text_bm25(text)
+        top_n_processed_tweets[tweet_id] = processed
+        unique_terms.update(processed)
 
-    print(f"Found {len(unique_terms)} unique terms in top {len(top_n_tweet_ids)} tweets.")
-
-    # Calculate Integrated Term Weights (wt) (Step 15)
-    print(f"Calculating integrated term weights (alpha={ALPHA_TERM_WEIGHTING})...")
+    # Calculate Integrated Term Weights (Step 15)
+    print("Calculating integrated term weights...")
     term_weights = {}
-    processed_term_count = 0
     for term in unique_terms:
-        containing_tweet_ids = [
-            tid for tid, tokens in top_n_processed_tweets.items() if term in tokens
-        ]
-
+        containing_tweet_ids = [tid for tid, tokens in top_n_processed_tweets.items() if term in tokens]
         if not containing_tweet_ids:
-            continue # Should not happen based on unique_terms logic, but safe check
+            continue
 
         # Get scores for tweets containing the term
-        # Use initial_score_map for BM25 scores and full_semantic_scores for semantic scores
-        term_bm25_scores = [initial_score_map.get(tid, 0.0) for tid in containing_tweet_ids]
-        term_semantic_scores = [full_semantic_scores.get(tid, 0.0) for tid in containing_tweet_ids] # Use the full map
+        term_bm25_scores = [score for tid, score, _ in top_n_candidates if tid in containing_tweet_ids]
+        term_semantic_scores = [semantic_scores.get(tid, 0.0) for tid in containing_tweet_ids]
 
         # Calculate averages
         avg_bm25_score = np.mean(term_bm25_scores) if term_bm25_scores else 0.0
         avg_semantic_score = np.mean(term_semantic_scores) if term_semantic_scores else 0.0
 
-        # Calculate integrated weight (wt) using Eq. 4 (simplified)
+        # Calculate integrated weight
         wt = ALPHA_TERM_WEIGHTING * avg_bm25_score + (1 - ALPHA_TERM_WEIGHTING) * avg_semantic_score
         term_weights[term] = wt
-        processed_term_count += 1
-        if processed_term_count % 1000 == 0: # Print progress periodically
-             print(f"  Processed {processed_term_count}/{len(unique_terms)} terms...")
 
-
-    print(f"Calculated weights for {len(term_weights)} terms.")
-    # Example: Print top 5 terms by weight
-    sorted_term_weights = sorted(term_weights.items(), key=lambda item: item[1], reverse=True)
-    print(f"Top 5 terms by integrated weight: {sorted_term_weights[:5]}")
-
-    # --- Phase 4: Query Expansion (Rocchio-like) ---
+    # --- Phase 4: Query Expansion ---
     print("\n--- Phase 4: Query Expansion ---")
 
     # Select Top K Expansion Terms (Step 16)
-    # sorted_term_weights is already available from Phase 3
-    expansion_terms = [term for term, weight in sorted_term_weights[:K_EXPANSION_TERMS]]
-    print(f"Selected {len(expansion_terms)} expansion terms: {expansion_terms}")
+    sorted_term_weights = sorted(term_weights.items(), key=lambda item: item[1], reverse=True)
+    expansion_terms = [term for term, _ in sorted_term_weights[:K_EXPANSION_TERMS]]
+    print(f"Selected expansion terms: {expansion_terms}")
 
-    # Form Expanded Query (Q') (Step 17)
-    # Simple concatenation as suggested for rank_bm25
+    # Form Expanded Query (Step 17)
     expanded_query_tokens = article_query_tokens + expansion_terms
-    print(f"Original query length: {len(article_query_tokens)}, Expanded query length: {len(expanded_query_tokens)}")
-    print(f"Expanded query tokens (sample): {expanded_query_tokens[:30]}...")
 
-    # --- Phase 5: Second Retrieval (BM25 with Expanded Query) ---
-    print("\n--- Phase 5: Second Retrieval (BM25 with Expanded Query) ---")
+    # --- Phase 5: Second Retrieval ---
+    print("\n--- Phase 5: Second Retrieval ---")
 
     # Get Final Scores (Step 18)
-    # Use the same BM25 index initialized in Step 7
-    print("Calculating final BM25 scores using the expanded query...")
+    print("Calculating final BM25 scores...")
     final_bm25_scores = bm25.get_scores(expanded_query_tokens)
-    print(f"Calculated {len(final_bm25_scores)} final scores.")
 
     # Rank All Tweets (Step 19)
-    # Combine final scores with tweet IDs
-    if len(final_bm25_scores) != len(tweet_ids_ordered):
-         print("Error: Mismatch between number of final BM25 scores and number of tweets!")
-         # Decide how to handle: exit, or proceed with potentially misaligned data?
-         # For now, let's try to proceed but warn heavily.
-         min_len = min(len(final_bm25_scores), len(tweet_ids_ordered))
-         final_scored_tweets = list(zip(tweet_ids_ordered[:min_len], final_bm25_scores[:min_len]))
-         print(f"Warning: Proceeding with {min_len} tweets due to score/ID mismatch.")
-    else:
-        final_scored_tweets = list(zip(tweet_ids_ordered, final_bm25_scores))
-
-    # Sort by final score descending
+    final_scored_tweets = list(zip(tweet_ids_ordered, final_bm25_scores, [tweet['text'] for tweet in tweets_data]))
     final_scored_tweets.sort(key=lambda item: item[1], reverse=True)
-    print("Ranked all tweets based on final scores.")
 
-    # --- Phase 6: Output ---
-    print("\n--- Phase 6: Final Output ---")
-    
-    # Present the final ranked list (Step 20)
-    print(f"\nFinal Ranked Tweets for Article ID: {target_article_id}")
-    print("--------------------------------------------------")
-    # Print top 20 results as an example
-    for rank, (tweet_id, score) in enumerate(final_scored_tweets[:20], 1):
-        # Optionally retrieve and print tweet text for context
-        tweet_text = tweet_lookup.get(tweet_id, "Tweet text not found.")
-        # Limit text length for display
-        display_text = (tweet_text[:100] + '...') if len(tweet_text) > 100 else tweet_text
-        print(f"Rank {rank}: Tweet ID: {tweet_id}, Score: {score:.4f}")
-        # print(f"   Text: {display_text}") # Uncomment to show text snippet
+    # Save final results
+    print("\nSaving final results...")
+    with open('final_results.txt', 'w', encoding='utf-8') as f:
+        f.write(f"Target Article: {target_article_info['title']}\n\n")
+        f.write("Final Ranked Tweets:\n")
+        for i, (tweet_id, score, text) in enumerate(final_scored_tweets[:N_INITIAL_CANDIDATES], 1):
+            f.write(f"\nRank {i} (Score: {score:.4f}):\n")
+            f.write(f"Tweet ID: {tweet_id}\n")
+            f.write(f"Text: {text}\n")
+            f.write("-" * 80 + "\n")
 
-    print("\n--- MSRoc Framework Execution Complete ---")
+    print("\nMSRoc Framework Execution Complete!")
+    print("Results saved to 'initial_bm25_results.txt' and 'final_results.txt'")
 
     # Note: Phase 6 also mentioned modularization and parameter tuning,
     # which are good practices but not implemented in this single script run.
